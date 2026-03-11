@@ -1,4 +1,7 @@
-🎓 EduNest
+![EduNest Banner](banner.png)
+
+# 🎓 EduNest
+Your Smart Student Living Companion
 Your Smart Student Living Companion
 EduNest is a student-friendly platform that helps college students easily find PGs, hostels, mess services, study spaces, and useful student contacts near their college.
 The goal of EduNest is to make student life easier by bringing everything a student needs in one place.
