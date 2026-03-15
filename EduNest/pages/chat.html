@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>EduNest Open Chat</title>
+<link rel="stylesheet" href="../stylesheet.css">
+
+<script>
+
+function sendMessage(){
+
+let name=document.getElementById("username").value;
+let text=document.getElementById("message").value;
+
+if(name=="" || text==""){
+alert("Please enter name and message");
+return;
+}
+
+let msg=document.createElement("div");
+msg.className="message";
+
+msg.innerHTML="<b>"+name+":</b> "+text;
+
+document.getElementById("messages").appendChild(msg);
+
+document.getElementById("message").value="";
+
+}
+
+</script>
+
+</head>
+
+
+<body>
+
+<div class="navbar">
+
+<img src="../images/profile.png" class="profile-icon">
+
+<div class="logo">EduNest</div>
+
+</div>
+
+
+<div class="welcome">
+
+<h1>EduNest Open Chat</h1>
+
+<p>Connect with students from your college</p>
+
+</div>
+
+
+
+<div class="chat-container">
+
+
+<div class="channels">
+
+<h3>Chat Rooms</h3>
+
+<p># General</p>
+<p># PG & Hostel</p>
+<p># Mess Food</p>
+<p># Study Help</p>
+<p># Buy & Sell</p>
+<p># Events</p>
+
+</div>
+
+
+
+<div class="chat-box">
+
+<div class="messages" id="messages">
+
+<div class="message">
+<b>Rahul:</b> Anyone selling engineering books?
+</div>
+
+<div class="message">
+<b>Priya:</b> Does anyone have Java notes?
+</div>
+
+<div class="message">
+<b>Aman:</b> Looking for roommate near Vashi.
+</div>
+
+</div>
+
+
+
+<div class="chat-input">
+
+<input id="username" placeholder="Your Name">
+
+<input id="message" placeholder="Type message">
+
+<button onclick="sendMessage()">Send</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</body>
+
+</html>

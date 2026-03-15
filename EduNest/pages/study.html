@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>EduNest Study Materials</title>
+<link rel="stylesheet" href="../stylesheet.css">
+
+<script>
+
+/* Search Feature */
+
+function searchNotes(){
+
+let input=document.getElementById("search").value.toLowerCase();
+let cards=document.getElementsByClassName("study-card");
+
+for(let i=0;i<cards.length;i++){
+
+let text=cards[i].innerText.toLowerCase();
+
+if(text.includes(input)){
+cards[i].style.display="block";
+}
+else{
+cards[i].style.display="none";
+}
+
+}
+
+}
+
+
+/* AI Doubt Solver */
+
+function solveDoubt(){
+
+let doubt=document.getElementById("doubt").value.toLowerCase();
+let answer=document.getElementById("answer");
+
+if(doubt.includes("recursion")){
+answer.innerHTML="Recursion is a function calling itself until a base condition is reached. Example: factorial using recursion.";
+}
+
+else if(doubt.includes("java")){
+answer.innerHTML="Java is an object-oriented programming language used to build web, mobile and enterprise applications.";
+}
+
+else if(doubt.includes("dbms")){
+answer.innerHTML="DBMS (Database Management System) stores and manages data efficiently using tables, relationships and queries.";
+}
+
+else{
+answer.innerHTML="Try searching topics like: recursion, java, dbms, physics laws.";
+}
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<img src="../images/profile.png" class="profile-icon">
+
+<div class="logo">EduNest</div>
+
+</div>
+
+<div class="welcome">
+
+<h1>Study Materials</h1>
+<p>Notes, papers and learning resources shared by students</p>
+
+</div>
+
+<!-- Search -->
+
+<div class="search-box">
+
+<input id="search" placeholder="Search notes (Java, DBMS, Physics)" onkeyup="searchNotes()">
+
+</div>
+
+<!-- Study Grid -->
+
+<div class="study-grid">
+
+<div class="study-card">
+<h3>Java Programming Notes</h3>
+<p>OOP concepts, inheritance, polymorphism</p>
+<button>Download PDF</button>
+</div>
+
+<div class="study-card">
+<h3>DBMS Notes</h3>
+<p>Normalization, ER diagrams, SQL</p>
+<button>Download PDF</button>
+</div>
+
+<div class="study-card">
+<h3>Engineering Physics</h3>
+<p>Wave optics, lasers, interference</p>
+<button>Download PDF</button>
+</div>
+
+<div class="study-card">
+<h3>Mathematics Formulas</h3>
+<p>Calculus and algebra formulas</p>
+<button>Download PDF</button>
+</div>
+
+<div class="study-card">
+<h3>Operating System Notes</h3>
+<p>Processes, threads, scheduling</p>
+<button>Download PDF</button>
+</div>
+
+<div class="study-card">
+<h3>Computer Networks</h3>
+<p>OSI model, TCP/IP, protocols</p>
+<button>Download PDF</button>
+</div>
+
+</div>
+
+<!-- Previous Papers -->
+
+<div class="section">
+
+<h2>Previous Year Papers</h2>
+
+<ul>
+<li>Java Programming 2023</li>
+<li>DBMS 2022</li>
+<li>Engineering Physics 2023</li>
+<li>Mathematics 2022</li>
+</ul>
+
+</div>
+
+<!-- Video Lectures -->
+
+<div class="section">
+
+<h2>Video Lectures</h2>
+
+<ul>
+<li>Java OOP Concepts</li>
+<li>DBMS Normalization Explained</li>
+<li>Engineering Physics Basics</li>
+</ul>
+
+</div>
+
+<!-- Assignment Bank -->
+
+<div class="section">
+
+<h2>Assignment Bank</h2>
+
+<ul>
+<li>Java Assignment Solution</li>
+<li>DBMS ER Diagram Assignment</li>
+<li>Physics Practical File</li>
+</ul>
+
+</div>
+
+<!-- Topper Notes -->
+
+<div class="section">
+
+<h2>Topper Notes</h2>
+
+<ul>
+<li>Java Short Notes (Topper 2024)</li>
+<li>DBMS Quick Revision</li>
+<li>Maths Important Formulas</li>
+</ul>
+
+</div>
+
+<!-- Upload Section -->
+
+<div class="section">
+
+<h2>Upload Study Material</h2>
+
+<input type="file">
+
+<button>Upload</button>
+
+</div>
+
+<!-- AI Doubt Solver -->
+
+<div class="ai-box">
+
+<h2>AI Doubt Solver 🤖</h2>
+
+<input id="doubt" placeholder="Ask a doubt (Example: recursion in java)">
+
+<button onclick="solveDoubt()">Solve</button>
+
+<p id="answer"></p>
+
+</div>
+
+</body>
+</html>
