@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Mess / Tiffin - EduNest</title>
+<link rel="stylesheet" href="../stylesheet.css">
+
+<script>
+
+function searchMess(){
+
+let food=document.getElementById("food").value.toLowerCase();
+let budget=document.getElementById("budget").value;
+
+let cards=document.getElementsByClassName("mess-card");
+
+for(let i=0;i<cards.length;i++){
+
+let menu=cards[i].getAttribute("data-food");
+let price=cards[i].getAttribute("data-price");
+
+if(menu.includes(food) && price<=budget){
+cards[i].style.display="block";
+}
+else{
+cards[i].style.display="none";
+}
+
+}
+
+}
+
+function aiSuggest(){
+
+let query=document.getElementById("aiQuery").value.toLowerCase();
+let result=document.getElementById("aiResult");
+
+if(query.includes("2500")){
+result.innerHTML="Recommended: Sai Tiffin Service (₹2500)";
+}
+else if(query.includes("2000")){
+result.innerHTML="Recommended: Krishna Tiffin (₹2000)";
+}
+else{
+result.innerHTML="Try Sai Tiffin or Annapurna Mess";
+}
+
+}
+
+function joinBuddy(btn){
+btn.innerHTML="✔ Joined";
+}
+
+function trial(btn){
+btn.innerHTML="✔ Trial Booked";
+}
+
+</script>
+
+</head>
+
+
+<body>
+
+<div class="navbar">
+<img src="../images/profile.png" class="profile-icon">
+<div class="logo">EduNest</div>
+</div>
+
+<div class="welcome">
+<h1>Mess & Tiffin Finder</h1>
+<p>Find food near your college</p>
+</div>
+
+<div class="search-section">
+
+<input id="food" placeholder="Search Food (dal rice chapati)">
+<input id="budget" type="number" placeholder="Budget ₹">
+
+<button onclick="searchMess()">Search</button>
+
+</div>
+
+
+<div class="search-section">
+
+<h3>EduNest Food AI</h3>
+
+<input id="aiQuery" placeholder="example: dal rice under 2500">
+
+<button onclick="aiSuggest()">Find</button>
+
+<p id="aiResult"></p>
+
+</div>
+
+
+
+<div class="mess-card" data-food="dal rice chapati bhindi" data-price="2500">
+
+<h2>Sai Tiffin Service</h2>
+
+<p>📍 Vashi</p>
+<p>🍛 Dal Rice Chapati Bhindi</p>
+<p>💰 ₹2500/month</p>
+
+<a href="https://www.google.com/maps?q=vashi+navi+mumbai" target="_blank">
+<button>Map</button>
+</a>
+
+<button onclick="joinBuddy(this)">Mess Buddy</button>
+
+<button onclick="trial(this)">Trial</button>
+
+</div>
+
+
+
+<div class="mess-card" data-food="dal rice chapati bhindi" data-price="2200">
+
+<h2>Annapurna Mess</h2>
+
+<p>📍 Nerul</p>
+<p>🍛 Dal Rice Chapati Bhindi</p>
+<p>💰 ₹2200/month</p>
+
+<a href="https://www.google.com/maps?q=nerul+navi+mumbai" target="_blank">
+<button>Map</button>
+</a>
+
+<button onclick="joinBuddy(this)">Mess Buddy</button>
+
+<button onclick="trial(this)">Trial</button>
+
+</div>
+
+
+
+<div class="mess-card" data-food="dal rice chapati bhindi" data-price="2000">
+
+<h2>Krishna Tiffin</h2>
+
+<p>📍 Koparkhairane</p>
+<p>🍛 Dal Rice Chapati Bhindi</p>
+<p>💰 ₹2000/month</p>
+
+<a href="https://www.google.com/maps?q=koparkhairane+navi+mumbai" target="_blank">
+<button>Map</button>
+</a>
+
+<button onclick="joinBuddy(this)">Mess Buddy</button>
+
+<button onclick="trial(this)">Trial</button>
+
+</div>
+
+
+<h2 class="review-title">Student Food Reviews</h2>
+
+
+<div class="review">
+
+<b>Rahul</b>
+
+<p>Sai Tiffin Service</p>
+
+<p>⭐ 4/5</p>
+
+<p>Chapati was soft and food was fresh.</p>
+
+</div>
+
+
+<div class="review">
+
+<b>Priya</b>
+
+<p>Annapurna Mess</p>
+
+<p>⭐ 5/5</p>
+
+<p>Paneer thali was amazing.</p>
+
+</div>
+
+
+</body>
+
+</html>

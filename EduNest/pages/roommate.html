@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Find Roommate - EduNest</title>
+<link rel="stylesheet" href="../stylesheet.css">
+
+<script>
+
+/* Student Verification */
+
+function verifyStudent(){
+
+let email=document.getElementById("email").value;
+
+if(email.includes("@college.edu") || email.includes(".ac.in")){
+
+document.getElementById("verify-msg").innerHTML="✅ Verified Student";
+
+}
+else{
+
+document.getElementById("verify-msg").innerHTML="❌ Please use your college email";
+
+}
+
+}
+
+/* Like Button */
+
+function like(btn){
+btn.innerHTML="❤️ Liked";
+}
+
+/* Connect Button */
+
+function connect(btn){
+btn.innerHTML="✔ Connected";
+}
+
+</script>
+
+</head>
+
+
+<body>
+
+<!-- Navbar -->
+
+<div class="navbar">
+
+<img src="../images/profile.png" class="profile-icon">
+
+<div class="logo">EduNest</div>
+
+</div>
+
+
+<!-- Page Heading -->
+
+<div class="welcome">
+
+<h1>Find a Roommate</h1>
+
+<p>Connect with students from your college</p>
+
+</div>
+
+
+<!-- Student Verification -->
+
+<div class="welcome">
+
+<h2>Student Verification</h2>
+
+<p>Verify using your college email</p>
+
+</div>
+
+
+<div class="verify-box">
+
+<input type="email" id="email" placeholder="Enter College Email">
+
+<button onclick="verifyStudent()">Verify</button>
+
+<p id="verify-msg"></p>
+
+</div>
+
+
+<!-- Filters -->
+
+<div class="filter">
+
+<input type="text" placeholder="Search by Location">
+
+<input type="text" placeholder="Search by College">
+
+</div>
+
+
+<!-- Roommate Cards -->
+
+<div class="dashboard">
+
+
+<div class="card roommate">
+
+<img src="../images/profile.png" class="roommate-pic">
+
+<h2>Rahul Sharma</h2>
+
+<p>🎓 Computer Engineering</p>
+
+<p>📍 Vashi</p>
+
+<p>💰 Budget: ₹5000 - ₹6000</p>
+
+<button onclick="like(this)">🤍 Like</button>
+
+<button onclick="connect(this)">Connect</button>
+
+<a href="https://wa.me/919999999999" target="_blank">
+
+<button>Chat</button>
+
+</a>
+
+</div>
+
+
+
+<div class="card roommate">
+
+<img src="../images/profile.png" class="roommate-pic">
+
+<h2>Priya Patel</h2>
+
+<p>🎓 IT Student</p>
+
+<p>📍 Nerul</p>
+
+<p>💰 Budget: ₹4500</p>
+
+<button onclick="like(this)">🤍 Like</button>
+
+<button onclick="connect(this)">Connect</button>
+
+<a href="https://wa.me/918888888888" target="_blank">
+
+<button>Chat</button>
+
+</a>
+
+</div>
+
+
+
+<div class="card roommate">
+
+<img src="../images/profile.png" class="roommate-pic">
+
+<h2>Aman Verma</h2>
+
+<p>🎓 Mechanical Engineering</p>
+
+<p>📍 Koparkhairane</p>
+
+<p>💰 Budget: ₹6000</p>
+
+<button onclick="like(this)">🤍 Like</button>
+
+<button onclick="connect(this)">Connect</button>
+
+<a href="https://wa.me/917777777777" target="_blank">
+
+<button>Chat</button>
+
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- Post Roommate Requirement -->
+
+<div class="welcome">
+
+<h1>Post Roommate Requirement</h1>
+
+</div>
+
+
+<div class="post-form">
+
+<form>
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="text" placeholder="College Name" required>
+
+<input type="text" placeholder="Preferred Location">
+
+<input type="number" placeholder="Budget">
+
+<textarea placeholder="Additional Details"></textarea>
+
+<button type="submit">Post</button>
+
+</form>
+
+</div>
+
+
+<!-- Bottom Navigation -->
+
+<div class="bottom-nav">
+
+<a href="../index.html">Home</a>
+
+<a href="#">Search</a>
+
+<a href="#">Messages</a>
+
+<a href="#">Profile</a>
+
+</div>
+
+
+</body>
+</html>
